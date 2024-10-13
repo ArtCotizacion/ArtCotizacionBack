@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,9 +25,10 @@ public class Product {
     @Column(name = "pro_des_vc")
     private String descripcion;
 
-    @Column(name = "pro_cant_vc")
-    private Integer cantidad;
-
     @Column(name = "pro_val_unit_vc")
     private Double valorUnitario;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<CotizacionProducto> cotizaciones;
+
 }
