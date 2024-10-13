@@ -21,13 +21,13 @@ public class ClientController {
         List<ClientResponseDTO> solicitante = clientServiceImpl.getAllClients();
         return new ResponseEntity<>(solicitante, HttpStatus.OK);
     }
-    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+
     @GetMapping("/{id}")
     public ResponseEntity<ClientResponseDTO> findById(@PathVariable int id) {
         ClientResponseDTO solicitante = clientServiceImpl.getClientById(id);
         return new ResponseEntity<>(solicitante, HttpStatus.OK);
     }
-    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteSolicitante(@PathVariable int id) {
         clientServiceImpl.deleteClient(id);

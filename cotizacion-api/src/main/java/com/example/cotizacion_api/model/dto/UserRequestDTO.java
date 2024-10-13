@@ -9,4 +9,6 @@ public class UserRequestDTO {
     private String username;
     @NotBlank(message = "Ingrese la contraseña")
     private String password;
+    @NotBlank (message = "ingrese el rol")
+    public String role;
 }

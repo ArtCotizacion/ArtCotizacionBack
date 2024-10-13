@@ -36,4 +36,8 @@ public class Detail {
 
     @Column(name = "det_tp_dob")
     private double totalPalabras;
+
+    @OneToOne
+    @JoinColumn(name = "cot_id_in", nullable = false)
+    private Cotizacion cotizacion;
 }

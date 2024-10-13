@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,4 +23,7 @@ public class Client {
 
     @Column(name = "cli_nom_vc")
     private String nombres;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private List<Cotizacion> cotizaciones;
 }
